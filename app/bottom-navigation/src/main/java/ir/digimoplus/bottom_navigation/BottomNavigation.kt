@@ -68,7 +68,7 @@ fun CustomBottomNavigation(
             // tab one
             NavTab(
                 state = navigationBottomState.value.tab1,
-                title = "  ${tabValues[0].title}",
+                title = tabValues[0].title,
                 size = size,
                 id = tabValues[0].iconId,
                 tabBackgroundColor = tabValues[0].tabBackgroundColor,
@@ -76,6 +76,8 @@ fun CustomBottomNavigation(
                 titleColor = tabValues[0].titleColor,
                 corner = tabValues[0].tabCorner,
                 titleStyle = tabValues[0].titleStyle ?: LocalTextStyle.current,
+                badgeValue = tabValues[0].badgeValue,
+                badgeBackgroundColor = tabValues[0].badgeBackgroundColor
             ) {
                 navigationBottomState.value =
                     BottomNavigationModel(tab1 = true, tab2 = false, tab3 = false)
@@ -88,7 +90,7 @@ fun CustomBottomNavigation(
             //tab two
             NavTab(
                 state = navigationBottomState.value.tab2,
-                title = "  ${tabValues[1].title}",
+                title = tabValues[1].title,
                 size = size,
                 id = tabValues[1].iconId,
                 tabBackgroundColor = tabValues[1].tabBackgroundColor,
@@ -96,6 +98,8 @@ fun CustomBottomNavigation(
                 titleColor = tabValues[1].titleColor,
                 corner = tabValues[1].tabCorner,
                 titleStyle = tabValues[1].titleStyle ?: LocalTextStyle.current,
+                badgeValue = tabValues[1].badgeValue,
+                badgeBackgroundColor = tabValues[1].badgeBackgroundColor
             ) {
                 navigationBottomState.value =
                     BottomNavigationModel(tab1 = false, tab2 = true, tab3 = false)
@@ -109,7 +113,9 @@ fun CustomBottomNavigation(
             NavTab(
                 icon = tabValues[2].iconId,
                 height = tabValues[2].tabHeight,
-                size = size
+                size = size,
+                badgeValue = tabValues[2].badgeValue,
+                badgeBackgroundColor = tabValues[2].badgeBackgroundColor
             ) {
                 onTabClickListener(2)
             }
@@ -117,7 +123,7 @@ fun CustomBottomNavigation(
             //tab three
             NavTab(
                 state = navigationBottomState.value.tab3,
-                title = "  ${tabValues[3].title}",
+                title = tabValues[3].title,
                 size = size,
                 id = tabValues[3].iconId,
                 tabBackgroundColor = tabValues[3].tabBackgroundColor,
@@ -125,6 +131,8 @@ fun CustomBottomNavigation(
                 titleColor = tabValues[3].titleColor,
                 corner = tabValues[3].tabCorner,
                 titleStyle = tabValues[3].titleStyle ?: LocalTextStyle.current,
+                badgeValue = tabValues[3].badgeValue,
+                badgeBackgroundColor = tabValues[3].badgeBackgroundColor
             ) {
                 navigationBottomState.value =
                     BottomNavigationModel(tab1 = false, tab2 = false, tab3 = true)

@@ -15,5 +15,6 @@ data class TabValue(
     val titleColor: Color = Color.Black,
     val tabCorner: Float = 35f,
     val titleStyle: TextStyle? = null,
-
+    val badgeValue: Int = 0,
+    val badgeBackgroundColor: Color = Color.Red,
     )

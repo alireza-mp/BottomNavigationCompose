@@ -36,6 +36,8 @@ fun NavTab(
     titleColor: Color = Color.Black,
     corner: Float,
     titleStyle: TextStyle = LocalTextStyle.current,
+    badgeValue: Int = 0,
+    badgeBackgroundColor: Color,
     onClick: () -> Unit,
 ) {
 
@@ -122,11 +124,13 @@ fun NavTab(
                 contentAlignment = Alignment.Center
             ) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Image(modifier = Modifier
-                        .alpha(iconAnimation)
-                        .size(26.dp),
-                        painter = painterResource(id = id),
-                        contentDescription = "")
+                    BadgeIcon(backgroundColor = badgeBackgroundColor, value = badgeValue) {
+                        Image(modifier = Modifier
+                            .alpha(iconAnimation)
+                            .size(26.dp),
+                            painter = painterResource(id = id),
+                            contentDescription = "")
+                    }
                     Text(text = title,
                         style = titleStyle,
                         maxLines = 1,
@@ -146,6 +150,8 @@ fun NavTab(
     @DrawableRes icon: Int,
     size: Dp,
     height: Dp = 50.dp,
+    badgeValue: Int = 0,
+    badgeBackgroundColor: Color,
     onClick: () -> Unit,
 ) {
 
@@ -166,10 +172,13 @@ fun NavTab(
             contentAlignment = Alignment.Center
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Image(
-                    modifier = Modifier.size(26.dp),
-                    painter = painterResource(id = icon),
-                    contentDescription = "")
+                BadgeIcon(backgroundColor = badgeBackgroundColor, value = badgeValue) {
+                    Image(
+                        modifier = Modifier.size(26.dp),
+                        painter = painterResource(id = icon),
+                        contentDescription = "")
+                }
+
             }
         }
     }

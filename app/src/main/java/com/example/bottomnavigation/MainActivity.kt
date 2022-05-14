@@ -60,13 +60,15 @@ class MainActivity : ComponentActivity() {
                         tabValues = listOf(
                             TabValue(
                                 "Home",
-                                R.drawable.home
+                                R.drawable.home,
+                                badgeValue = 3
                             ), TabValue(
                                 "Profile",
                                 R.drawable.home
                             ), TabValue(
-                                "Home",
-                                R.drawable.home
+                                "Basket",
+                                R.drawable.home,
+                                badgeValue = 7
                             ), TabValue(
                                 "Chat",
                                 R.drawable.home

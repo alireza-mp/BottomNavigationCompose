@@ -61,7 +61,8 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 
-    implementation 'com.github.alireza-mp:BottomNavigationCompose:1.0'
+    //implementation 'com.github.alireza-mp:BottomNavigationCompose:1.0'
+    implementation project(":app:bottom-navigation")
 
     // pager
     implementation "com.google.accompanist:accompanist-pager:0.12.0"
