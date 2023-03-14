@@ -1,30 +1,28 @@
 package com.example.bottomnavigation
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.bottomnavigation.ui.theme.BottomNavigationTheme
-import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.HorizontalPager
-import com.google.accompanist.pager.rememberPagerState
 import ir.digimoplus.bottom_navigation.CustomBottomNavigation
 import ir.digimoplus.bottom_navigation.TabValue
 
 
+@ExperimentalFoundationApi
 @ExperimentalMaterialApi
-@ExperimentalPagerApi
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +30,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
 
-                val pagerState = rememberPagerState(pageCount = 3)
+                val pagerState = rememberPagerState()
 
-                HorizontalPager(modifier = Modifier.fillMaxSize(), state = pagerState) { index ->
+                HorizontalPager(
+                    modifier = Modifier.fillMaxSize(),
+                    state = pagerState,
+                    pageCount = 3,
+                ) { index ->
                     when (index) {
                         0 -> Display(text = "tab 1")
                         1 -> Display(text = "tab 2")

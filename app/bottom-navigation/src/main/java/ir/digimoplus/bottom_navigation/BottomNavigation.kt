@@ -1,22 +1,19 @@
+@file:OptIn(ExperimentalFoundationApi::class)
+
 package ir.digimoplus.bottom_navigation
 
-import android.util.Log
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.pager.PagerState
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.LocalTextStyle
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.PagerState
 import kotlinx.coroutines.launch
 
 
-@ExperimentalPagerApi
 @ExperimentalMaterialApi
 @Composable
 fun CustomBottomNavigation(
@@ -53,17 +50,20 @@ fun CustomBottomNavigation(
         }
     }
 
-    BoxWithConstraints(modifier = modifier
+    BoxWithConstraints(
+        modifier = modifier
     ) {
 
         // tab size  = 34% width from card width size
         size = ((maxWidth / 100) * 34)
 
-        Row(modifier = Modifier
-            .fillMaxSize()
-            .padding(contentPadding),
+        Row(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(contentPadding),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween) {
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
 
             // tab one
             NavTab(
